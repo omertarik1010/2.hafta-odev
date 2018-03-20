@@ -1,0 +1,115 @@
+#a=katmadegerciro
+#b=toplamsatismiktari
+#c=hammaddemaliyeti
+#d=bakimonarimgiderleri
+#e=sevkiyatgiderleri
+#f=satinalinanhizmetgiderleri
+
+def katmadegerciroHesapla(b,c,d,e,f):
+    global a
+    a=b-(c+d+e+f)
+    if(a>1000):
+        print("Ýþletme katma deðer cirosu yüksektir.")
+    elif(500<a<999):
+        print("Ýþletme katma deðer cirosu normaldir.")
+    else:
+        print("Ýþletme katma deðer cirosu düþüktür.")
+        return a
+print("Lütfen deðerleri giriniz.")
+b=int(input("toplam satýþ miktarý giriniz:"))
+c=int(input("hammadde maliyeti giriniz:"))
+d=int(input("bakým onarým giderlerini giriniz:"))
+e=int(input("Sevkiyat giderlerini giriniz:"))
+f=int(input("satýn alýnan hizmetleri giriniz:"))
+a=katmadegerciroHesapla(b,c,d,e,f)
+print(a)
+
+
+###################################################
+
+
+#a=müsterilerlecalýsmasuresi
+#b=calisilansure
+#c=toplammusterisayisi
+
+def müsterilerlecalýsmasuresi2016yiliHesapla(b,c):
+    global a
+    a=b/c
+    return a
+def müsterilerlecalýsmasuresi2017yiliHesapla(b,c):
+    global z
+    z=(b+50)/(c+20)
+    return z
+b=170
+c=50
+x=müsterilerlecalýsmasuresi2016yiliHesapla(b,c)
+y=müsterilerlecalýsmasuresi2017yiliHesapla(b,c)
+print (x-y)
+
+
+####################################################
+
+
+#b=yazilimgelirleri
+#c=finansmangelirleri
+#d=ürünsatisgelirleri
+#e=calisanmaaslari
+#f=donanimmaliyeti
+#h=sponsorlukgeliri
+#i=eticaretgeliri
+#k=bakimmaliyeti
+#l=kiragideri
+
+def ilkaykarHesapla(b,c,d,e,f,l):
+    global kar
+    kar=(b+c+d)-(e+f+l)
+    return kar
+def sonkarHesapla(b,h,i,d,e,l,k):
+    global z
+    z=(b+h+i+d)-(e+l+k)
+    return z
+print("lütfen deðerleri giriniz:")
+b=int(input("yazýlým gelirlerini giriniz:"))
+c=int(input("finansman gelirlerini giriniz:"))
+d=int(input("ürün satýþ gelirlerini giriniz:"))
+e=int(input("çalýþan maaþlarýný giriniz:"))
+f=int(input("donaným maliyetlerini giriniz:"))
+h=int(input("sponsorluk gelirlerini giriniz:"))
+i=int(input("eticaret gelirlerini yazýnýz:"))
+k=int(input("bakým maliyetlerini yazýnýz:"))
+l=int(input("kira gideri yazýnýz:"))
+x=ilkaykarHesapla(b,c,d,e,f,l)
+y=sonkarHesapla(b,h,i,d,e,l,k)
+print(x-y)
+if(x-y>5000):
+    print("iþletme çok karlý.")
+elif(1000<x-y<5000):
+    print("iþletme karý normal.")
+else:
+    print("iþletme yeterince karda deðil.")
+
+########################################
+
+k=koltukSayisi=50
+y=yatakSayisi=20
+d=dolapSayisi=40
+def donemBasiStok(koltukSayisi,yatakSayisi,dolapSayisi):
+    global donemBasiStok
+    donemBasiStok=(koltukSayisi+yatakSayisi+dolapSayisi)
+    return donemBasiStok
+def donemIciStok(koltukSayisi,yatakSayisi,dolapSayisi):
+    global donemIciStok
+    donemIciStok=((koltukSayisi+10)+(yatakSayisi+15)+(dolapSayisi+5))
+    return donemIciStok
+def donemSonuStok(koltukSayisi,yatakSayisi,dolapSayisi):
+    global donemSonuStok
+    donemSonuStok=((koltukSayisi+10-25)+(yatakSayisi+15-20)+(dolapSayisi+5-10))
+    return donemSonuStok
+def ortalamaStok(donemBasiStok,donemSonuStok):
+    ortalamaStok=(donemBasiStok+donemSonuStok)/2
+    return ortalamaStok
+x=donemBasiStok(koltukSayisi,yatakSayisi,dolapSayisi)
+y=donemSonuStok(koltukSayisi,yatakSayisi,dolapSayisi)
+z=ortalamaStok(donemBasiStok,donemSonuStok)
+z=(x+y)/2
+print (z)
